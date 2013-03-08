@@ -3,66 +3,53 @@
 
 Coding Weekend Project 2013-02 JavaScript Framework Evaluation
 
- * Allgemeines
- * 1. Einführung
- * 2. Grundlagen zum JavaScript-Stack
- * 3. JavaScript-Frameworks
- * 4. Testumfeld
- * 5. Evaluierung
- * 6. Zusammenfassung und Fazit
- * Referenzen
+# Einführung
 
-## Allgemeines
+## Projektmotivation 
 
-### Struktur
+Für mehrschichtige Applikationen (Multitier Enterprise Applications)
+werden zur Umsetzung der Frontends traditionell die Technologien der
+Sprachen (Java, .NET) gewählt, welche in der Middleware zum Einsatz
+kommen. Dabei handelt es sich meist um "Serverside"-Technologien, die
+einen State verwalten ein Templating bereitstellen und den vollen
+Umfang der Middleware-Sprache zur Verfügung haben.
 
-* Ausarbeitung für Whitepaper in diesem Repo
-* Entwicklung von Testapplikationen in ausgelagerten Repos (Teilprojekte)
+Als Folge davon entstehen Frontends die bei jedem Seitenwechsel einen
+Request/Responce-Zyklus durchlaufen und häufig einen Teilaspekt der
+Geschäftslogik abbilden.
 
-### Verzeichnis der Projekt-Repos mit umgesetzten Testapplikationen
+Ziel bei der Entwicklung von Frontends sollte es sein, dass sie
+ausschliesslich Logik beinhalten, die die Navigation und Anzeige von
+Frontend-Elementen behandelt und möglichst wenig Anfragen zum Server
+gesendet werden, um dem Anwender ein flüssiges Arbeiten zu erlauben.
+Siehe auch RAI: https://de.wikipedia.org/wiki/Rich_Internet_Application
 
-* AngularJS & AngularUI  mit Bootstrap und jQueryUI 
-  - https://github.com/dataduke/CodeWe1302AngularJs
-* Backbone.js mit Underscore.js und Docco
-  - https://github.com/sebastianfuss/backbone-test
-* JavaScriptMVC mit StealJS, DocumentJS, jQuery und FuncUnit (QUnit, Selenium, Jasmine)
-  - https://github.com/realthargor/javascriptMVCCodingWe
+Zur Umsetzung einer solchen RAI stehen eine Vielzahl an JS-Frameworks
+zur Verfügung.
 
-## 1. Einführung
+Aktuell ist die mögliche Auswahl an verfügbaren und aktuellen
+Frameworks, welche auf JavaScript (JS) setzen, in der Tat so hoch,
+dass die genauen Vor- und Nachteile der einzelnen Lösungen
+hinsichtlich Verfügbarkeit und Aktualität der Projektdokumentation,
+Einarbeitungszeit, Dauer und Qualität des Framework-Lifecycles, sowie
+deren technische Eleganz bei der Implementierung, nicht bekannt oder
+hinreichend dokumentiert vorzufinden ist.
 
-### Projektmotivation 
+Um eine Entscheidungsbasis über die allgemeine Reife für den Einsatz
+in industriellen Großprojekten zu etablieren, oder gar die
+Entscheidung für eine bestimmte Kombination an JavaScript-Rahmenwerken
+zu ermöglichen soll ein Vergleich diverser JS-Frameworks pragmatisch
+vollzogen werden.
 
-Für mehrschichtige Applikationen (Multitier Enterprise Applications) bestehen neben den Möglichkeiten,
-welche der Java- oder .NET-Stack bietet, eine Vielzahl an JavaScript-Frameworks 
-um den Frontend-Layer (Tier) zu gestalten.
+## Grundidee
 
-Aktuell ist die mögliche Auswahl an verfügbaren und aktuellen Frameworks, welche auf JavaScript (JS) setzen, 
-in der Tat so hoch, dass die genauen Vor- und Nachteile der einzelnen Lösungen hinsichtlich 
-Verfügbarkeit und Aktualität der Projektdokumentation, Einarbeitungszeit, Dauer und Qualität des Framework-Lifecycles 
-sowie deren technische Eleganz bei der Implementierung, nicht bekannt oder hinreichend dokumentiert vorzufinden ist.
+Evaluierung ausgewählter JavaScript-Frameworks durch Realisierung
+einer äquivalenten Testanwendungen.
 
-Um eine Entscheidungsbasis über die allgmeine Reife für den Einstatz in industriellen Großprojekten zu etablieren, 
-oder gar die Entscheidung für eine bestimmte Kombination an JavaScript-Rahmenwerken zu ermöglichen 
-soll ein Vergleich diverser JS-Frameworks pragmatisch vollzogen werden.
+Vergleiche hierzu ähnliches Projekt mit ToDo-App als Referenz:
+http://addyosmani.github.com/todomvc/
 
-### Grundidee
-
-* Evaluierung ausgewählter JavaScript-Frameworks durch Realisierung einer äquivalenten Testapplikation
-* Vergleiche hierzu ähnliches Projekt mit ToDo-App als Referenz: http://addyosmani.github.com/todomvc/
-
-## 2. Grundlagen zum JavaScript-Stack
-
-### Aufbau des Frontends (Layers und Dependencies)
-
-Top-Down-Architektur:
-
-1. Eigene Applikation (Testapplikation)
-2. JS Framework (Framework zur Evaluierung)
-3. jQuery und andere JS Framework Dependencies (on Top von Protoype/Utilities)
-4. PrototypeJS und/oder andere Utility-Frameworks (Low-Level-Funktionen und Patterns für Objekte)
-5. JavaScript
-
-### Funktionalitäten von JS-Frameworks
+## Erwartete Funktionalitäten von JS-Frameworks
 
 Gemeinsamkeiten (Häufige Standards):
 
@@ -72,34 +59,21 @@ Gemeinsamkeiten (Häufige Standards):
 - Messages, REST
 - JS Dokumentation
 
-Unterschiede:
+### Kandidaten
 
-- Patterns: MVC (Model-View-Controller) vs. MVVM (Model-View-ViewModel)
-
-## 3. JavaScript-Frameworks
-
-### Ausgewählte Testkandidaten 
-
-* AngularJS (http://angularjs.org/,  http://www.youtube.com/user/angularjs) & AngularUI (http://angular-ui.github.com/) 
-  - __[DONE]__ TestApp Build mit Bootstrap, jQueryUI
+* AngularJS (http://angularjs.org/) 
 * Backbone.js (http://backbonejs.org/) 
-  - __[DONE]__ TestApp Build mit Underscore.js, Docco
 * Ember.js (http://emberjs.com/)
 * Knockout (http://knockoutjs.com/)
 * JavaScriptMVC (http://javascriptmvc.com/) 
-  - __[DONE]__ TestApp Build mit  StealJS, DocumentJS, jQuery, FuncUnit (QUnit, Selenium, Jasmine)
 
-### Kurzvorstellung und Beschreibungen
-
-siehe Dokumentation in einzelnen Projekt-Repos
-
-## 4. Testumfeld
+## Beschreibung der Testanwendung
 
 ### Geschäftsprozess
 
 Kundenerfassung mit Personendaten, Adressdaten und Bestätigung der gemachten Angaben.
 
-### Felder der Testapplikation (Referenzimplementierung)
+### Seiten+Felder
 
 Personendaten (Page):
 
@@ -126,28 +100,46 @@ Ende (Page):
 - Danke (Text)
 - Neubestellung (Link zu Personendaten, Loop)
 
-### Features der Testapplikation
+# Umsetzung
 
-siehe Beschreibung bei https://github.com/sebastianfuss/backbone-test
+## Ergebnisse
 
-## 5. Evaluierung
+Die Dokumentation und ein ausführlicheres Fazit findet sich im jeweiligen Repo.
 
-### Evaluierungskriterien
+* AngularJS 
+  - https://github.com/dataduke/CodeWe1302AngularJs
+* Backbone.js
+  - https://github.com/sebastianfuss/backbone-test
+* JavaScriptMVC
+  - https://github.com/realthargor/javascriptMVCCodingWe
 
-- Pageflow, Routing
-- Model, Data-Binding
-- Felderdeklaration, Validierung
-- REST-Anbindung
-- Dokumentation
-- Unit-Tests für Validierung, Pageflow
+## Zusammenfassung und Fazit
 
-### Evaluierungsergebnisse
+Zusammenfassend lässt sich sagen, dass zu unserer Überraschung der
+Abstand zwischen den untersuchten Frameworks riesig ist. Mit dem
+richtigen Framework lässt sich die beschriebene Testanwendung ohne
+vorherige Erfahrung in zwei Tagen vollständig umsetzen, mit dem
+Falschen wird es zum Martyrium.
 
-siehe Dokumentation in einzelnen Projekt-Repos
+AngularJS geht als eindeutiger Sieger hervor. Es ist ordentlich
+dokumentiert und erlaubt es in relativ kurzer Zeit eine fast
+vollständige Anwendung mit Boardmitteln zu realisieren ohne eine
+unnötige Komplexität mitzubringen. Der erzwungene Codestil (es wird
+mit spezifischen Attributen an Tags gearbeitet) kann durchaus
+kontrovers diskutiert werden. Unter der Prämisse das Frontends
+ausschliesslich Anzeigelogik enthalten sollen und ihr Model direkt auf
+die gezeigte Ansicht zugeschnitten sind, ist es jedoch durchaus valide Lösung.
 
-## 6. Zusammenfassung und Fazit
+Auch mit Backbone.js dem Zweitplazierten war es möglich eine
+vollständige Anwendung zu entwickeln. Hierzu musste aber aus einer
+Vielzahl von Erweiterung für die unterschiedlichen Aufgaben ausgewählt
+und eine Integration der Plugins geschaffen werden. Ingesamt ist dabei
+deutlich mehr Code entstanden als bei AngularJS, was unter dem Aspekt
+der Wartbarkeit durchaus kritisch zusehen ist.
 
-TBD
+Der Verlierer (nein kein dritter Platz!) JavascriptMVC hat es Aufgrund
+der vielen Bugs der schlechten Dokumentation und es geringen
+Funktionsumfangs nichtmal in die Qualifikation geschafft.
 
 ## Referenzen
 
